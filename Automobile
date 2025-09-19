@@ -1,0 +1,49 @@
+public class Automobile implements Comparable<Automobile> {
+    private int modelYear;
+    private String brand;
+
+    public Automobile(int modelYear, String brand) {
+        this.modelYear = modelYear;
+        this.brand = brand;
+    }
+
+    public int getModelYear() {
+        return modelYear;
+    }
+    public String getBrand() {
+        return brand;
+    }
+
+    public void honk() {
+        System.out.println("Beep! Beep!");
+    }
+
+    @Override
+    public int compareTo(Automobile other) {
+        if (this.modelYear != other.modelYear) {
+            return Integer.compare(this.modelYear, other.modelYear);
+        }
+        return this.brand.compareTo(other.brand);
+    }
+
+    @Override
+    public String toString() {
+        return "Automobile{year=" + modelYear + ", brand='" + brand + "'}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Automobile)) return false;
+        Automobile other = (Automobile) o;
+        return this.modelYear == other.modelYear
+            && (this.brand == null ? other.brand == null : this.brand.equals(other.brand));
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Integer.hashCode(modelYear);
+        result = 31 * result + (brand == null ? 0 : brand.hashCode());
+        return result;
+    }
+}
