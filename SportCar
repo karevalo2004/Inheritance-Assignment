@@ -1,0 +1,22 @@
+public class SportsCar extends Automobile {
+    public SportsCar(int year, String brand) {
+        super(year, brand);
+    }
+
+    public void accelerate() {
+        System.out.println(getBrand() + " sports car goes zooming forward!");
+    }
+
+    public void stop() {
+        System.out.println(getBrand() + " sports car screeching to a halt!");
+    }
+
+    public void reverse() {
+        System.out.println(getBrand() + " sports car is backing up.");
+    }
+
+    @Override
+    public void honk() {
+        System.out.println(getBrand() + " sports car: Beeeep!");
+    }
+}
