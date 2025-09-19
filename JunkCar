@@ -1,0 +1,22 @@
+public class JunkCar extends Automobile {
+    public JunkCar(int year, String brand) {
+        super(year, brand);
+    }
+
+    public void accelerate() {
+        System.out.println(getBrand() + " junk car struggling to go forward...");
+    }
+
+    public void stop() {
+        System.out.println(getBrand() + " junk car squeaking to a stop...");
+    }
+
+    public void reverse() {
+        System.out.println(getBrand() + " junk car reversing slowly...");
+    }
+
+    @Override
+    public void honk() {
+        System.out.println(getBrand() + " junk car: Beep? Beep?");
+    }
+}
