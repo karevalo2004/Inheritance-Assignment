@@ -1,0 +1,33 @@
+public class AutomobileTester {
+    public static void main(String[] args) {
+        Automobile[] arr = new Automobile[5];
+        arr[0] = new Car(2015, "Toyota");
+        arr[1] = new SportsCar(2020, "Porsche");
+        arr[2] = new JunkCar(1999, "Oldsmobile");
+        arr[3] = new Car(2015, "Honda");
+        arr[4] = new SportsCar(2018, "Ferrari");
+
+        for (Automobile a : arr) {
+            System.out.println(a.toString());
+        }
+
+        System.out.println("arr[0] equals arr[3]? " + arr[0].equals(arr[3]));  
+        System.out.println("arr[0] equals arr[0]? " + arr[0].equals(arr[0]));
+
+        java.util.Arrays.sort(arr);
+        System.out.println("After sorting:");
+        for (Automobile a : arr) {
+            System.out.println(a);
+        }
+
+        for (Automobile a : arr) {
+            a.honk();
+            if (a instanceof Car) {
+                ((Car) a).accelerate();
+                ((Car) a).stop();
+                ((Car) a).reverse();
+            }
+            System.out.println("---");
+        }
+    }
+}
